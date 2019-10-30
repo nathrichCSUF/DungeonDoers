@@ -40,13 +40,13 @@ namespace TechnicalServices::Logging
     // information in such cases.
     loggingStream << std::unitbuf;
 
-    *this << "Simple Logger being used and has been successfully initialized";
+  //  *this << "Simple Logger being used and has been successfully initialized";
   }
 
 
   inline SimpleLogger::~SimpleLogger() noexcept
   {
-    *this << "Simple Logger shutdown successfully";
+  //  *this << "Simple Logger shutdown successfully";
   }
 
 
