@@ -14,22 +14,28 @@ int main()
 {
     try
     {
-        std::cout << "\nLibrary Inventory system initializing ..\n\n";
+        std::cout << "\n**********************************************\n";
+        std::cout << "\n**********************************************\n";
+        std::cout << "\n********   ****************   ****************\n";
+        std::cout << "\n********  * ***************  * ***************\n";
+        std::cout << "\n********  ** **************  ** **************\n";
+        std::cout << "\n********  *** *************  *** *************\n";
+        std::cout << "\n********  **** ************  **** ************\n";
+        std::cout << "\n********  *** *************  *** *************\n";
+        std::cout << "\n********  ** **************  ** **************\n";
+        std::cout << "\n********  * * UNGEON ******  * * OERS ********\n";
+        std::cout << "\n********   ****************   ****************\n";
+        std::cout << "\n**********************************************\n\n";
+
+
+
+
 
         std::unique_ptr<UI::UserInterfaceHandler> userInterface( new UI::SimpleUI );
 
-        std::cout << "\nInitialization completed successfully\n\n";
+        std::cout << "\n*****Welcome******\n\n";
 
-        char response;
-        do
-        {
-            std::cout << "Ready to transition into Operational State? (Q/Y/N) ";
-            std::cin >> response;
-            response = std::toupper( response, std::locale() );
-        } while (response != 'Y' && response != 'Q');
-        std::cout << "\n";
-
-         if( response == 'Y' ) userInterface->launch();
+         userInterface->launch();
 
         std::cout << "\nProgram complete, initiating shutdown\n";
     }
