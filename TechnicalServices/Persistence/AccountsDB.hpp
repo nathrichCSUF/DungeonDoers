@@ -39,3 +39,21 @@ namespace TechnicalServices::Persistence
 
   }; // class AccountsDB
 }  // namespace TechnicalServices::Persistence
+
+class ExternalSystem {
+public:
+  ExternalSystem();
+  bool checkPayment();
+  ~ExternalSystem();
+  void displaySubscriptionInfo();
+  void setPaymentInfo(std::string, std::string, std::string);
+  bool validatePayment();
+  void receipt();
+
+
+private:
+  std::string cardHolderName;
+  std::string cardNum;
+  std::string expDate; 
+
+};
