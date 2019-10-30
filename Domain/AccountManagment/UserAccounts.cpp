@@ -14,14 +14,14 @@ namespace Domain::AccountManagement
   : _persistentData( std::make_unique<TechnicalServices::Persistence::AccountsDB>() ),   // will replace hard coded implementation class next increment
     _loggerPtr     ( std::make_unique<TechnicalServices::Logging::SimpleLogger>() )    // will replace hard coded implementation class next increment
   {
-    _logger << "UserAccounts being used and has been successfully initialized";
+   // _logger << "UserAccounts being used and has been successfully initialized";
   }
 
 
   // Destructor
   UserAccounts::~UserAccounts() noexcept
   {
-    _logger << "UserAccounts shutdown successfully";
+  //  _logger << "UserAccounts shutdown successfully";
   }
 
 
