@@ -20,6 +20,11 @@ namespace Domain::Library
       // Operations
       virtual std::vector<std::string> getCommands() = 0;  // retrieves the list of actions (commands)
 
+      virtual std::vector<std::string> getSessionCommands(int selection) = 0; //commands for each session
+
+      //virtual std::vector<std::string>  getList();  // retrieves the list of actions (commands)
+
+
       // Object Factory returning a specialized object specific to the specified role
       static std::unique_ptr<SessionHandler> createSession( const std::string & role );
 

@@ -4,6 +4,7 @@
 
 #include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/Domain/Library/AdministratorSession.hpp"
 #include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/Domain/Library/PlayerSession.hpp"
+#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/Domain/Library/ExternalSession.hpp"
 #include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/Domain/Library/Session.hpp"
 
 
@@ -28,6 +29,8 @@ namespace Domain::Library
 
     if     ( role == "Player"      )    return std::make_unique<Domain::Library::PlayerSession>();
     else if( role == "Administrator" )    return std::make_unique<Domain::Library::AdministratorSession>();
+    // else if( role == "Check Accounts"      )    return std::make_unique<Domain::Library::AdministratorSession::getList>();
+    // else if( role == "Add or Delete Accounts") return AddToList();
     else
     {
       throw std::logic_error( "Invalid role requested in function " + std::string(__func__) ); // Oops, should never get here but ...  Throw something
