@@ -32,14 +32,13 @@ namespace UI
     _loggerPtr     ( std::make_unique<TechnicalServices::Logging::SimpleLogger>() ),   // will replace these factory calls with abstract factory calls in the next increment
     _persistentData( std::make_unique<TechnicalServices::Persistence::AccountsDB>() )    // will replace these factory calls with abstract factory calls in the next increment
   {
-    _logger << "Simple UI being used and has been successfully initialized";
   }
 
 
   // Destructor
   SimpleUI::~SimpleUI() noexcept
   {
-    _logger << "Simple UI shutdown successfully";
+
   }
 
 
@@ -97,16 +96,37 @@ namespace UI
     std::unique_ptr<Domain::Library::SessionHandler> sessionControl = Domain::Library::SessionHandler::createSession( selectedRole );
 
     std::vector<std::string> commands = sessionControl->getCommands();
-    unsigned menuSelection;
-    do
-    {
-      for( unsigned i = 0; i != commands.size(); ++i )   std::cout << std::setw( 2 ) << i << " - " << commands[i] << '\n';
-      std::cout << "  role (0-" << commands.size()-1 << "): ";
-      std::cin  >> menuSelection;
-    } while( menuSelection >= roleLegalValues.size() );
+    bool outOfMenu = false;
+    unsigned menuSelection = 1;
+    std::string selectedCommand;
+    do{ 
+      if (!outOfMenu)     
+      {
+          do //run initial command 
+        { 
+          for( unsigned i = 0; i != commands.size(); ++i )   std::cout << std::setw( 2 ) << i << " - " << commands[i] << '\n'; //Lists all commands
+          std::cout << "  role (0-" << commands.size()-1 << "): "; //Lists options
+          std::cin  >> menuSelection; //0-4 command szie= 5
+        } while( menuSelection >= commands.size() ); //always false so it runs once 
 
-    std::string selectedCommand = commands[menuSelection];
-    _logger << "Selected command \"" + selectedCommand + "\" chosen";
+        selectedCommand = commands[menuSelection]; //displays what was added 
+        _logger << "Selected command \"" + selectedCommand + "\" chosen\n";
+        outOfMenu = true;
+      }
+      else //start getting session commands 
+      {
+        std::vector<std::string> sessionCommands = sessionControl->getSessionCommands(menuSelection); //Gets new set of comands
+        for( unsigned i = 0; i != sessionCommands.size(); ++i )   std::cout << std::setw( 2 ) << i << " - " << sessionCommands[i] << '\n'; //display commanfs
+        std::cout << "  role (0-" << sessionCommands.size()-1 << "): ";
+        std::cin >> menuSelection; //Read from initial commands
+
+        selectedCommand = sessionCommands[menuSelection]; //displays what was added 
+        _logger << "Selected command \"" + selectedCommand + "\" chosen\n";
+      }
+
+    }while((menuSelection != 0));
+
+
   }
 
 }
