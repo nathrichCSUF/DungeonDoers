@@ -2,13 +2,13 @@
 
 #include <memory>   // std::unique_ptr
 
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/Domain/AccountManagement/AccountManagementHandler.hpp"
+#include "/Domain/AccountManagement/AccountManagementHandler.hpp"
 
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/TechnicalServices/Logging/LoggerHandler.hpp"
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/TechnicalServices/Persistence/PersistenceHandler.hpp"
+#include "/TechnicalServices/Logging/LoggerHandler.hpp"
+#include "/TechnicalServices/Persistence/PersistenceHandler.hpp"
 
 
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/UI/UserInterfaceHandler.hpp"
+#include "/UI/UserInterfaceHandler.hpp"
 
 namespace UI
 {
