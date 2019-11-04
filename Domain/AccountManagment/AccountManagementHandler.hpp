@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/TechnicalServices/Persistence/PersistenceHandler.hpp"
+#include "/TechnicalServices/Persistence/PersistenceHandler.hpp"
 
 namespace Domain::AccountManagement
 {
