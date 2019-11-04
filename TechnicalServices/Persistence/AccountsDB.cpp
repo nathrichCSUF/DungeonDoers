@@ -3,9 +3,9 @@
 #include <memory>     // make_unique()
 #include <ctime> 
 
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/TechnicalServices/Persistence/AccountsDB.hpp"
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/TechnicalServices/Logging/SimpleLogger.hpp"
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/TechnicalServices/Persistence/PersistenceHandler.hpp"
+#include "/TechnicalServices/Persistence/AccountsDB.hpp"
+#include "/TechnicalServices/Logging/SimpleLogger.hpp"
+#include "/TechnicalServices/Persistence/PersistenceHandler.hpp"
 
 namespace TechnicalServices::Persistence
 {
