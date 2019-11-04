@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/Domain/Library/Session.hpp"
+#include "/Domain/Library/Session.hpp"
 
 
 namespace Domain::Library
