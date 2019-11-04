@@ -4,8 +4,8 @@
 #include <string>
 #include <vector>
 
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/TechnicalServices/Logging/LoggerHandler.hpp"
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/TechnicalServices/Persistence/PersistenceHandler.hpp"
+#include "/TechnicalServices/Logging/LoggerHandler.hpp"
+#include "/TechnicalServices/Persistence/PersistenceHandler.hpp"
 
 
 
