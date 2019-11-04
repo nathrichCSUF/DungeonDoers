@@ -4,7 +4,7 @@
 #include <chrono>
 #include <iomanip>
 
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/TechnicalServices/Logging/LoggerHandler.hpp"
+#include "/TechnicalServices/Logging/LoggerHandler.hpp"
 
 
 namespace TechnicalServices::Logging
