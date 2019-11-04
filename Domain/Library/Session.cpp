@@ -2,10 +2,10 @@
 #include <stdexcept>           // logic_error
 #include <string>
 
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/Domain/Library/AdministratorSession.hpp"
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/Domain/Library/PlayerSession.hpp"
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/Domain/Library/ExternalSession.hpp"
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/Domain/Library/Session.hpp"
+#include "/Domain/Library/AdministratorSession.hpp"
+#include "/Domain/Library/PlayerSession.hpp"
+#include "/Domain/Library/ExternalSession.hpp"
+#include "/Domain/Library/Session.hpp"
 
 
 
