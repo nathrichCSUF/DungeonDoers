@@ -5,8 +5,8 @@
 #include <iostream>
 #include <locale>
 
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/UI/SimpleUI.hpp"
-#include "/Users/hecthor/Desktop/fall_2019/462/sampleCode/UI/UserInterfaceHandler.hpp"
+#include "/UI/SimpleUI.hpp"
+#include "/UI/UserInterfaceHandler.hpp"
 
 
 
