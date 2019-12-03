@@ -2,13 +2,13 @@
 
 #include <memory>   // std::unique_ptr
 
-#include "/Domain/AccountManagement/AccountManagementHandler.hpp"
+#include "../Domain/AccountManagement/AccountManagementHandler.hpp"
 
-#include "/TechnicalServices/Logging/LoggerHandler.hpp"
-#include "/TechnicalServices/Persistence/PersistenceHandler.hpp"
+#include "../TechnicalServices/Logging/LoggerHandler.hpp"
+#include "../TechnicalServices/Persistence/PersistenceHandler.hpp"
 
 
-#include "/UI/UserInterfaceHandler.hpp"
+#include "UserInterfaceHandler.hpp"
 
 namespace UI
 {

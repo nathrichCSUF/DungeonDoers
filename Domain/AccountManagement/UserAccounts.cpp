@@ -2,10 +2,10 @@
 #include <memory>       // make_unique<>()
 
 
-#include "/Domain/AccountManagement/UserAccounts.hpp"
+#include "UserAccounts.hpp"
 
-#include "/TechnicalServices/Logging/SimpleLogger.hpp"
-#include "/TechnicalServices/Persistence/AccountsDB.hpp"
+#include "../../TechnicalServices/Logging/SimpleLogger.hpp"
+#include "../../TechnicalServices/Persistence/AccountsDB.hpp"
 
 namespace Domain::AccountManagement
 {

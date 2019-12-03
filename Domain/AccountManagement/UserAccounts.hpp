@@ -3,10 +3,10 @@
 #include <memory>    // std::unique_ptr
 #include <string>
 
-#include "/Domain/AccountManagement/AccountManagementHandler.hpp"
+#include "AccountManagementHandler.hpp"
 
-#include "/TechnicalServices/Logging/LoggerHandler.hpp"
-#include "/TechnicalServices/Persistence/PersistenceHandler.hpp"
+#include "../../TechnicalServices/Logging/LoggerHandler.hpp"
+#include "../../TechnicalServices/Persistence/PersistenceHandler.hpp"
 
 
 namespace Domain::AccountManagement

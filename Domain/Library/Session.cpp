@@ -2,10 +2,10 @@
 #include <stdexcept>           // logic_error
 #include <string>
 
-#include "/Domain/Library/AdministratorSession.hpp"
-#include "/Domain/Library/PlayerSession.hpp"
-#include "/Domain/Library/ExternalSession.hpp"
-#include "/Domain/Library/Session.hpp"
+#include "AdministratorSession.hpp"
+#include "PlayerSession.hpp"
+#include "ExternalSession.hpp"
+#include "Session.hpp"
 
 
 

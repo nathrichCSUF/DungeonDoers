@@ -10,19 +10,18 @@
     // string, getline()
 #include <vector>
 
-#include "/Domain/AccountManagement/UserAccounts.hpp"
+#include "../Domain/AccountManagement/UserAccounts.hpp"                                
+
+#include "../Domain/Library/Session.hpp"
+
+#include "../TechnicalServices/Logging/LoggerHandler.hpp"
+#include "../TechnicalServices/Logging/SimpleLogger.hpp"
+// Include for now - will replace next increment
+#include "../TechnicalServices/Persistence/AccountsDB.hpp"
 
 // Include for now - will replace next increment
-#include "/Domain/Library/Session.hpp"
 
-#include "/TechnicalServices/Logging/LoggerHandler.hpp"
-#include "/TechnicalServices/Logging/SimpleLogger.hpp"
-// Include for now - will replace next increment
-#include "/TechnicalServices/Persistence/AccountsDB.hpp"
-
-// Include for now - will replace next increment
-
-#include "/UI/SimpleUI.hpp"
+#include "SimpleUI.hpp"
 
 namespace UI
 {

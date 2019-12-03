@@ -5,8 +5,8 @@
 #include <iostream>
 #include <locale>
 
-#include "/UI/SimpleUI.hpp"
-#include "/UI/UserInterfaceHandler.hpp"
+#include "UI/SimpleUI.hpp"
+#include "UI/UserInterfaceHandler.hpp"
 
 
 
