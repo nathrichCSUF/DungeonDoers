@@ -6,13 +6,17 @@
 #include <memory>
 #include <stdlib.h>
 
+namespace External
+{ 
+    class ExternalService { //Interface for External Service
 
-class ExternalService : public Domain::Library::SessionHandler {
+    public:
+        ExternalService()                                           = default;  // default ctor
+        ExternalService( const ExternalService &  original )         = default;  // copy ctor
+        ExternalService(       ExternalService && original )         = default;  // move ctor
+        virtual int GetConfirmationNumber() = 0;  
+        virtual ~ExternalService() = 0;
 
-
-    std::vector<std::string> getCommands() override;  // retrieves the list of actions (commands)
-
-    std::vector<std::string> getSessionCommands(int selection) override;
-
-
-};
+    };
+    inline ExternalService::~ExternalService() {}
+}

@@ -6,8 +6,12 @@
 #include <stdlib.h>
 
 #include "Session.hpp"
+#include "ExternalSession.hpp"
 #include "../Player/Shop.hpp"
 #include "../Player/Weapon.hpp"
+#include "../../External/External.hpp"
+#include "../../External/ExternalLaunch.hpp"
+
 namespace Domain::Library
 {
   class PlayerSession : public Domain::Library::SessionHandler
@@ -17,21 +21,26 @@ namespace Domain::Library
       PlayerSession():SessionHandler()
       {
         _shop = std::make_unique<Domain::Player::Shop>();
+        _esLaunch = std::make_unique<External::ExternalLaunch>();
       }
       std::unique_ptr<Domain::Player::Weapon> _weapon;
       unsigned menuType = 0;
       unsigned weaponIndex;
       int enemyHealth = 2;
+      int receiptCode;
        std::vector<std::string> weapons;
       // Operationsfr
       std::vector<std::string> getCommands() override;  // retrieves the list of actions (commands)
        std::vector<std::string> getSessionCommands(int selection) override;
       unsigned GetItems();
+      int GetReceiptCodeFromExternal();
       // Destructor
       // Pure virtual destructor helps force the class to be abstract, but must still be implemented
      ~PlayerSession() noexcept override;
     private:
-      std::unique_ptr<Domain::Player::Shop> _shop; 
+      std::unique_ptr<Domain::Player::Shop> _shop;
+      std::unique_ptr<External::ExternalLaunch> _esLaunch;
+      std::unique_ptr<External::ExternalService> _es;
 
   }; // class BorrowerSession
 
@@ -55,16 +64,17 @@ namespace Domain::Library
      std::cin >> choice;
      return choice -1;
   }
+  inline int PlayerSession::GetReceiptCodeFromExternal()
+  {
+    std::unique_ptr<External::ExternalService> _es = _esLaunch->LaunchExternalService(); //Launch desired service
+    return _es->GetConfirmationNumber();
+  }
   inline std::vector<std::string> PlayerSession::getCommands()
   {
     return { "Log Out", "Load Game", "Pay/Renew Subscription"};
   }
   inline std::vector<std::string> PlayerSession::getSessionCommands(int selection)
   {
-    std::string name;
-    std::string cardNumber;
-    std::string expDate;
-    int receiptCode = rand() %10000 + 1000;
     switch(menuType){
       case 0: //Menu 
         switch(selection)
@@ -73,14 +83,9 @@ namespace Domain::Library
             menuType = 1; //Change to Select Save SLot
             return {"Log Out","Slot 1 ","Slot 2","Slot 3"};
           case 2: //Pay/Renew Subscription
-            std::cout << "Enter card holder name: ";
-            std::cin >> name;
-            std::cout << "\nEnter card number: ";
-            std::cin >> cardNumber;
-            std::cout << "\nEnter card expiration date (MMYY): ";
-            std::cin >> expDate;
-            std::cout << "30 day Subscription Successfully Purchased.\n";
-            std::cout << "Payement Confirmation Number: " << receiptCode << "\n";
+             _es; 
+            receiptCode = GetReceiptCodeFromExternal();
+            std::cout << "Received Confirmation Number from External Service :" << receiptCode << "\n";
             return { "Log Out", "Load Game", "Pay/Renew Subscription"};
           default:
             menuType = 0;

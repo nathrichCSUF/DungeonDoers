@@ -9,15 +9,16 @@
 
 namespace Domain::Library
 {
-  class ExternalSession : public External::ExternalService
+  class PremiumExternalSession : public External::ExternalService
   {
     public:
-        ExternalSession()  = default; 
+        PremiumExternalSession()  = default; 
         int GetConfirmationNumber() override
         {
           std::string name;
           std::string cardNumber;
           std::string expDate;
+          std::string email;
           int confirmationNumber = rand() %10000 + 1000; //generate random confirmation number!
           std::cout << "Enter card holder name: ";
           std::cin >> name;
@@ -26,14 +27,17 @@ namespace Domain::Library
           std::cout << "\nEnter card expiration date (MMYY): ";
           std::cin >> expDate;
           std::cout << "30 day Subscription Successfully Purchased.\n";
+          std::cout << "Enter your email for a chance to win big: ";
+          std::cin >> email;
+          std::cout << "\nAs a Premium Member, the confirmation code also provides free premium items!\n";
           std::cout << "Payement Confirmation Number: " << confirmationNumber << "\n";
           return confirmationNumber;
         }
-        ~ExternalSession() noexcept override;
+        ~PremiumExternalSession() noexcept override;
 
 
   }; // class BorrowerSession
-  inline ExternalSession::~ExternalSession() noexcept
+  inline PremiumExternalSession::~PremiumExternalSession() noexcept
   {
     
   }

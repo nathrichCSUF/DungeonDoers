@@ -4,7 +4,7 @@
 
 #include "AdministratorSession.hpp"
 #include "PlayerSession.hpp"
-#include "ExternalSession.hpp"
+//#include "ExternalSession.hpp"
 #include "Session.hpp"
 
 
