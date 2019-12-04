@@ -152,7 +152,7 @@ namespace Domain::Library
             menuType = 0;
             return { "Log Out", "Load Game", "Pay/Renew Subscription"};
         }
-      case 5:
+      case 5: //Collect Treasure end screen
         switch(selection){
           case 1: //Collect Treasure
             std::cout << "You have beaten Dungeon Doers!\n";
