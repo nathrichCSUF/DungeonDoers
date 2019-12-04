@@ -3,6 +3,7 @@ CSUF: CPSC 462 Software Design Project
 CLI Based Adventure Game
 
 Compile Code
+
 Make sure to read to compile code.
 
 Files without .o file. 
